@@ -1,0 +1,22 @@
+provider "google" {
+  version = "3.5.0"
+
+  credentials = file("terraform-gcp-key.json")
+
+  project = "terraform-course-291611"
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}
+
+resource "google_compute_network" "vpc_network" {
+  name = "terraform-network"
+}
+
+terraform {
+  backend "gcs" {
+    bucket = "andrii_terraform"
+    prefix = "terraform"
+    credentials = "terraform-gcp-key.json"
+   }
+
+} 
