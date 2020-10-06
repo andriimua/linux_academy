@@ -1,2 +1,2 @@
-terraform/.terraform
-terraform-gcp-key.json
+*/.terraform/*
+*terraform-gcp-key.json*
